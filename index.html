@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -191,3 +192,198 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+  <title>Kannam Charitha Portfolio</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ripple {
+      position: relative;
+      overflow: hidden;
+    }
+    .ripple::after {
+      content: "";
+      position: absolute;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      transform: scale(0);
+      animation: ripple 0.6s linear;
+      pointer-events: none;
+    }
+    @keyframes ripple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="portfolio-title">My Portfolio</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <div class="dropdown">
+        <a href="#">Education</a>
+        <div class="dropdown-content">
+          <a href="#ssc">SSC</a>
+          <a href="#inter">Intermediate</a>
+          <a href="#btech">B.Tech</a>
+        </div>
+      </div>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="profile-section fade-in">
+    <img src="images/prot.jpg" alt="Profile" class="profile-pic" />
+    <h1>Hello!</h1>
+    <p>This is Kannam Charitha</p> 
+  </div>
+
+  <section id="about" class="side-section fade-in">
+    <div class="section-content left-align">
+      <h2>About</h2>
+      <p class="about-text">I am highly passionate about web development to leverage my skills and knowledge to achieve my career aspirations.</p>
+    </div>
+  </section>
+
+  <section id="Education" class="side-section fade-in">
+    <div class="section-content right-align">
+      <h2>Education</h2>
+      <h3>B.Tech in Computer Science (2023–2027)</h3>
+      <p class="black-bold">Vel Tech University, Chennai<br/>CGPA: 7.6</p>
+      <h3>Intermediate (2021–2023)</h3>
+      <p id="inter" class="black-bold">Vardhan Reddy Junior College, Nellore<br/>CGPA: 8.8</p>
+      <h3>SSC (2021)</h3>
+      <p id="ssc" class="black-bold">Tagore School, A.S. Peta<br/>CGPA: 9.2</p>
+    </div>
+  </section>
+
+  <section id="skills" class="side-section fade-in">
+    <div class="section-content left-align">
+      <h2>Skills</h2>
+      <div class="skills">
+        <button class="ripple">HTML</button>
+        <button class="ripple">CSS</button>
+        <button class="ripple">Python</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="Languages" class="side-section fade-in">
+    <div class="section-content right-align">
+      <h2>Languages</h2>
+      <div class="Languages">
+        <button class="ripple">Telugu</button>
+        <button class="ripple">English</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="side-section fade-in">
+    <div class="section-content left-align">
+      <h2>Projects</h2>
+      <h3>Accident Prevention in Hilly Areas</h3>
+      <p class="black-bold">A safety system that alerts drivers using lights and sound for oncoming vehicles in blind turns.</p>
+      <h3>Flood Management System</h3>
+      <p class="black-bold">Monitors water levels using sensors to protect crops from flooding.</p>
+    </div>
+  </section>
+
+  <section id="certificates" class="side-section fade-in">
+    <div class="section-content right-align">
+      <h2> Certificates </h2>
+      <div class="certificate-container">
+        <a href="Database Management System .pdf" target="_blank">
+          <img src="images/dbms logo.jpg" alt="Certificate 1" class="certificate-img">
+        </a>
+        <a href="python certificate.pdf" target="_blank">
+          <img src="images/python logo.jpg" alt="Certificate 2" class="certificate-img">
+        </a>
+        <a href="HTML .pdf" target="_blank">
+          <img src="images/html logo.jpg" alt="Certificate 3" class="certificate-img">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="side-section fade-in">
+    <div class="section-content left-align">
+      <h2>Contact</h2>
+      <p class="black-bold">Email: kannacharitha6@gmail.com</p>
+      <p class="black-bold">LinkedIn: <a href="https://www.linkedin.com/in/kannam-charitha-a7553b2aa" target="_blank">View Profile</a></p>
+
+      <div class="contact-form">
+        <h3>Contact Me</h3>
+        <form action="save_contact.xml" method="post">
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          <button class="ripple" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Kannam Charitha
+  </footer>
+
+  <!-- Inline JavaScript -->
+  <script>
+    // Fade-in sections on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1
+    };
+    const appearOnScroll = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          appearOnScroll.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Ripple effect on button click
+    document.querySelectorAll('.ripple').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        const circle = document.createElement('span');
+        const diameter = Math.max(btn.clientWidth, btn.clientHeight);
+        const radius = diameter / 2;
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${e.clientX - btn.offsetLeft - radius}px`;
+        circle.style.top = `${e.clientY - btn.offsetTop - radius}px`;
+        circle.classList.add('ripple');
+        const ripple = btn.querySelector('span');
+        if (ripple) ripple.remove();
+        btn.appendChild(circle);
+      });
+    });
+  </script>
+
+</body>
+</html>
+>>>>>>> 8cf90b9029757998fcf559aa650c7bb5f895eaff
